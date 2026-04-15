@@ -49,6 +49,9 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 32px 40px;
+  overflow: visible;          /* ✅ CLAVE */
+  position: relative;
+  z-index: 10;
 }
 
 .site-logo {
@@ -66,26 +69,28 @@ a:hover {
   align-items: center;
   gap: 28px;
   font-size: 14px;
+  overflow: visible;          /* ✅ CLAVE */
 }
 
 /* =========================
-   DROPDOWN PROYECTOS
+   DROPDOWN
    ========================= */
 
 .nav-dropdown {
   position: relative;
 }
 
-/* puente invisible para que no se cierre el menú */
+/* puente invisible para evitar pérdida de hover */
 .nav-dropdown::after {
   content: '';
   position: absolute;
   top: 100%;
   left: -12px;
   right: -12px;
-  height: 18px;
+  height: 20px;
 }
 
+/* menú desplegable */
 .dropdown-menu {
   position: absolute;
   top: 44px;
@@ -95,7 +100,7 @@ a:hover {
   min-width: 320px;
   display: none;
   flex-direction: column;
-  z-index: 100;
+  z-index: 1000;              /* ✅ asegura prioridad */
 }
 
 .dropdown-menu a {
@@ -114,7 +119,7 @@ a:hover {
 }
 
 /* =========================
-   CONTENIDO GENERAL
+   CONTENIDO
    ========================= */
 
 .container {
@@ -154,7 +159,6 @@ a:hover {
   color: var(--muted);
 }
 
-/* footer con dos extremos */
 .footer-wide {
   display: flex;
   justify-content: space-between;
@@ -165,8 +169,3 @@ a:hover {
 .footer-right {
   font-size: 13px;
 }
-
-.footer-right a {
-  margin-left: 6px;
-}
-``
