@@ -21,10 +21,15 @@ body {
 a { color: var(--text); text-decoration: none; }
 a:hover { color: var(--accent); }
 
-/* HEADER — CLAVE */
+/* =========================
+   HEADER FIXED (CLAVE)
+   ========================= */
+
 .site-header {
-  position: sticky;          /* ✅ CAMBIO FUNDAMENTAL */
+  position: fixed;        /* ✅ CLAVE ABSOLUTA */
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   background: var(--bg);
   display: flex;
@@ -52,7 +57,6 @@ a:hover { color: var(--accent); }
   position: relative;
 }
 
-/* puente hover */
 .nav-dropdown::after {
   content: '';
   position: absolute;
@@ -68,31 +72,34 @@ a:hover { color: var(--accent); }
   left: 0;
   background: var(--bg);
   border: 1px solid var(--border);
-  min-width: 300px;
+  min-width: 320px;
   display: none;
   flex-direction: column;
-  z-index: 2000;             /* ✅ BIEN POR ENCIMA */
+  z-index: 2000;          /* ✅ por encima del contenido */
 }
 
 .dropdown-menu a {
   padding: 10px 18px;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
   background: #eef2f0;
 }
 
-/* ACTIVACIÓN */
 .nav-dropdown:hover .dropdown-menu {
   display: flex;
 }
 
-/* CONTENIDO */
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 96px 40px;        /* ✅ ya no tapa el dropdown */
+  padding: 160px 40px 96px; /* ✅ reserva espacio del header */
 }
 
 /* HOME */
