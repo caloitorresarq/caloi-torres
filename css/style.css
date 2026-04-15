@@ -18,27 +18,25 @@ body {
 }
 
 /* LINKS */
-a { color: var(--text); text-decoration: none; }
-a:hover { color: var(--accent); }
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent);
+}
 
-/* =========================
-   HEADER FIXED (CLAVE)
-   ========================= */
-
+/* HEADER */
 .site-header {
-  position: fixed;        /* ✅ CLAVE ABSOLUTA */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: var(--bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 40px;
+  background: var(--bg);
+  position: relative;
+  z-index: 10;
 }
 
-/* LOGO */
 .site-logo {
   font-size: 14px;
   letter-spacing: 0.6px;
@@ -52,30 +50,27 @@ a:hover { color: var(--accent); }
   font-size: 14px;
 }
 
-/* DROPDOWN */
+/* ===== DROPDOWN CLAVE ===== */
 .nav-dropdown {
   position: relative;
 }
 
-.nav-dropdown::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: -14px;
-  right: -14px;
-  height: 24px;
+/* el trigger */
+.nav-dropdown > span {
+  cursor: default;
 }
 
+/* el menú flotante */
 .dropdown-menu {
-  position: absolute;
-  top: 44px;
-  left: 0;
+  position: fixed;                 /* ✅ CLAVE ABSOLUTA */
+  top: 88px;                       /* altura real del header */
+  left: auto;
   background: var(--bg);
   border: 1px solid var(--border);
   min-width: 320px;
   display: none;
   flex-direction: column;
-  z-index: 2000;          /* ✅ por encima del contenido */
+  z-index: 2000;                   /* por encima de todo */
 }
 
 .dropdown-menu a {
@@ -88,18 +83,16 @@ a:hover { color: var(--accent); }
   background: #eef2f0;
 }
 
+/* activación */
 .nav-dropdown:hover .dropdown-menu {
   display: flex;
 }
 
-/* =========================
-   MAIN CONTENT
-   ========================= */
-
+/* CONTENT */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 160px 40px 96px; /* ✅ reserva espacio del header */
+  padding: 96px 40px;
 }
 
 /* HOME */
