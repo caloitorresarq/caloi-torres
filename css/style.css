@@ -1,7 +1,3 @@
-/* =========================
-   VARIABLES
-   ========================= */
-
 :root {
   --bg: #f7f7f5;
   --text: #1e1e1e;
@@ -10,13 +6,8 @@
   --accent: #4f6f63;
 }
 
-/* =========================
-   RESET / BASE
-   ========================= */
-
-* {
-  box-sizing: border-box;
-}
+/* RESET */
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -24,34 +15,21 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.65;
-  overflow-x: hidden;
 }
 
-/* =========================
-   LINKS
-   ========================= */
+/* LINKS */
+a { color: var(--text); text-decoration: none; }
+a:hover { color: var(--accent); }
 
-a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--accent);
-}
-
-/* =========================
-   HEADER
-   ========================= */
-
+/* HEADER */
 .site-header {
+  position: relative;
+  z-index: 1000;              /* ✅ clave */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 40px;
-  overflow: visible;          /* ✅ CLAVE */
-  position: relative;
-  z-index: 10;
+  background: var(--bg);
 }
 
 .site-logo {
@@ -60,78 +38,62 @@ a:hover {
   font-weight: 500;
 }
 
-/* =========================
-   NAV
-   ========================= */
-
+/* NAV */
 .site-nav {
   display: flex;
-  align-items: center;
   gap: 28px;
   font-size: 14px;
-  overflow: visible;          /* ✅ CLAVE */
 }
 
-/* =========================
-   DROPDOWN
-   ========================= */
-
+/* DROPDOWN */
 .nav-dropdown {
   position: relative;
 }
 
-/* puente invisible para evitar pérdida de hover */
 .nav-dropdown::after {
   content: '';
   position: absolute;
   top: 100%;
-  left: -12px;
-  right: -12px;
-  height: 20px;
+  left: -16px;
+  right: -16px;
+  height: 24px;
 }
 
-/* menú desplegable */
 .dropdown-menu {
   position: absolute;
   top: 44px;
   left: 0;
+  z-index: 1100;              /* ✅ más alto que todo */
   background: var(--bg);
   border: 1px solid var(--border);
   min-width: 320px;
   display: none;
   flex-direction: column;
-  z-index: 1000;              /* ✅ asegura prioridad */
 }
 
 .dropdown-menu a {
   padding: 10px 18px;
   font-size: 14px;
-  white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
   background: #eef2f0;
-  color: var(--accent);
 }
 
 .nav-dropdown:hover .dropdown-menu {
   display: flex;
 }
 
-/* =========================
-   CONTENIDO
-   ========================= */
-
+/* MAIN */
 .container {
+  position: relative;
+  z-index: 1;                 /* ✅ queda debajo del header */
   max-width: 1200px;
   margin: 0 auto;
   padding: 96px 40px;
 }
 
-/* =========================
-   HOME
-   ========================= */
-
+/* HOME */
 .home-text h1 {
   font-size: 44px;
   font-weight: 400;
@@ -149,10 +111,7 @@ a:hover {
   color: var(--muted);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-
+/* FOOTER */
 .footer {
   padding: 48px 40px;
   font-size: 13px;
@@ -163,9 +122,4 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.footer-left,
-.footer-right {
-  font-size: 13px;
 }
