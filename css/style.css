@@ -21,17 +21,19 @@ body {
 a { color: var(--text); text-decoration: none; }
 a:hover { color: var(--accent); }
 
-/* HEADER */
+/* HEADER — CLAVE */
 .site-header {
-  position: relative;
-  z-index: 1000;              /* ✅ clave */
+  position: sticky;          /* ✅ CAMBIO FUNDAMENTAL */
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 40px;
-  background: var(--bg);
 }
 
+/* LOGO */
 .site-logo {
   font-size: 14px;
   letter-spacing: 0.6px;
@@ -50,12 +52,13 @@ a:hover { color: var(--accent); }
   position: relative;
 }
 
+/* puente hover */
 .nav-dropdown::after {
   content: '';
   position: absolute;
   top: 100%;
-  left: -16px;
-  right: -16px;
+  left: -14px;
+  right: -14px;
   height: 24px;
 }
 
@@ -63,12 +66,12 @@ a:hover { color: var(--accent); }
   position: absolute;
   top: 44px;
   left: 0;
-  z-index: 1100;              /* ✅ más alto que todo */
   background: var(--bg);
   border: 1px solid var(--border);
-  min-width: 320px;
+  min-width: 300px;
   display: none;
   flex-direction: column;
+  z-index: 2000;             /* ✅ BIEN POR ENCIMA */
 }
 
 .dropdown-menu a {
@@ -80,17 +83,16 @@ a:hover { color: var(--accent); }
   background: #eef2f0;
 }
 
+/* ACTIVACIÓN */
 .nav-dropdown:hover .dropdown-menu {
   display: flex;
 }
 
-/* MAIN */
+/* CONTENIDO */
 .container {
-  position: relative;
-  z-index: 1;                 /* ✅ queda debajo del header */
   max-width: 1200px;
   margin: 0 auto;
-  padding: 96px 40px;
+  padding: 96px 40px;        /* ✅ ya no tapa el dropdown */
 }
 
 /* HOME */
