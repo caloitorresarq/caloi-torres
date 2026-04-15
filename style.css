@@ -1,4 +1,16 @@
 /* =========================
+   VARIABLES ESTÉTICAS
+   ========================= */
+
+:root {
+  --bg: #f7f7f5;
+  --text: #1e1e1e;
+  --muted: #6b6b6b;
+  --border: #e2e2e2;
+  --accent: #4f6f63;
+}
+
+/* =========================
    RESET GENERAL
    ========================= */
 
@@ -9,8 +21,8 @@
 body {
   margin: 0;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  background: #f7f7f5;
-  color: #1e1e1e;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.65;
   overflow-x: hidden;
 }
@@ -20,12 +32,13 @@ body {
    ========================= */
 
 a {
-  color: #1e1e1e;
+  color: var(--text);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--accent);
 }
 
 /* =========================
@@ -36,21 +49,23 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 40px;
+  padding: 32px 40px;
   position: relative;
   z-index: 10;
 }
 
 .site-logo {
   font-size: 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   font-weight: 500;
 }
+
+/* NAV */
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   font-size: 14px;
   font-weight: 400;
 }
@@ -73,28 +88,33 @@ a:hover {
   height: 18px;
 }
 
+/* menú */
 .dropdown-menu {
   position: absolute;
-  top: 42px;
+  top: 44px;
   right: 0;
-  background: #f7f7f5;
-  border: 1px solid #e2e2e2;
+  background: var(--bg);
+  border: 1px solid var(--border);
   min-width: 300px;
   display: none;
   flex-direction: column;
   z-index: 20;
 }
 
+/* items */
 .dropdown-menu a {
   padding: 10px 18px;
   font-size: 14px;
   white-space: normal;
+  color: var(--text);
 }
 
 .dropdown-menu a:hover {
-  background: #eeeeee;
+  background: #eef2f0;
+  color: var(--accent);
 }
 
+/* mostrar menú */
 .nav-dropdown:hover .dropdown-menu {
   display: flex;
 }
@@ -110,13 +130,14 @@ a:hover {
 }
 
 /* =========================
-   JERARQUÍA TIPOGRÁFICA (PASO 2)
+   JERARQUÍA TIPOGRÁFICA
    ========================= */
 
 h1 {
   font-size: 44px;
   font-weight: 400;
   margin-bottom: 36px;
+  color: var(--text);
 }
 
 h2 {
@@ -124,17 +145,19 @@ h2 {
   font-weight: 500;
   margin-top: 64px;
   margin-bottom: 24px;
+  color: var(--text);
 }
 
 p {
   max-width: 560px;
   font-size: 15px;
   margin-bottom: 22px;
+  color: var(--text);
 }
 
 p.lead {
   font-size: 16px;
-  color: #6b6b6b;
+  color: var(--muted);
 }
 
 /* =========================
@@ -142,7 +165,8 @@ p.lead {
    ========================= */
 
 .footer {
-  padding: 40px;
+  padding: 48px 40px;
   font-size: 13px;
-  color: #6b6b6b;
+  color: var(--muted);
 }
+``
