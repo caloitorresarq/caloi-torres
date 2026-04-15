@@ -19,15 +19,16 @@ body {
   overflow-x: hidden;
 }
 
+/* LINKS */
 a {
   color: var(--text);
   text-decoration: none;
 }
-
 a:hover {
   color: var(--accent);
 }
 
+/* HEADER */
 .site-header {
   background: var(--bg);
 }
@@ -41,18 +42,21 @@ a:hover {
   z-index: 10;
 }
 
+/* LOGO */
 .site-logo {
   font-size: 14px;
   letter-spacing: 0.6px;
   font-weight: 500;
 }
 
+/* NAV */
 .site-nav {
   display: flex;
   gap: 28px;
   font-size: 14px;
 }
 
+/* DROPDOWN */
 .nav-dropdown {
   position: relative;
 }
@@ -61,41 +65,58 @@ a:hover {
   cursor: default;
 }
 
+/* MENÚ */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
+
   background: var(--bg);
   border: 1px solid var(--border);
-  width: 420px;
-  max-width: 90vw;
+
+  /* ✅ ancho flexible y seguro */
+  min-width: 320px;
+  max-width: 480px;
+
   display: none;
   flex-direction: column;
   z-index: 20;
 }
 
+/* LINKS DEL MENÚ */
 .dropdown-menu a {
+  display: block;
+  width: 100%;
+
   padding: 10px 18px;
   font-size: 14px;
   line-height: 1.45;
-  white-space: normal;
+
+  /* ✅ ESTO ES LA CLAVE */
+  white-space: normal;          /* permite salto de línea */
+  overflow-wrap: anywhere;      /* rompe palabras largas */
   word-break: break-word;
 }
 
+/* HOVER */
 .dropdown-menu a:hover {
   background: #eef2f0;
 }
 
-.nav-dropdown:hover .dropdown-menu {
+/* ACTIVACIÓN */
+.nav-dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
   display: flex;
 }
 
+/* CONTENIDO */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 96px 40px;
 }
 
+/* HOME */
 .home-text h1 {
   font-size: 44px;
   font-weight: 400;
@@ -113,6 +134,7 @@ a:hover {
   color: var(--muted);
 }
 
+/* FOOTER */
 .footer {
   padding: 48px 40px;
   font-size: 13px;
@@ -124,4 +146,3 @@ a:hover {
   justify-content: space-between;
   align-items: center;
 }
-``
