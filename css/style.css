@@ -15,6 +15,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 /* LINKS */
@@ -37,6 +38,7 @@ a:hover {
   z-index: 10;
 }
 
+/* LOGO */
 .site-logo {
   font-size: 14px;
   letter-spacing: 0.6px;
@@ -50,45 +52,49 @@ a:hover {
   font-size: 14px;
 }
 
-/* ===== DROPDOWN CLAVE ===== */
+/* DROPDOWN */
 .nav-dropdown {
   position: relative;
 }
 
-/* el trigger */
 .nav-dropdown > span {
   cursor: default;
 }
 
-/* el menú flotante */
+/* MENÚ DESPLEGABLE */
 .dropdown-menu {
-  position: fixed;                 /* ✅ CLAVE ABSOLUTA */
-  top: 88px;                       /* altura real del header */
+  position: fixed;
+  top: 88px;                 /* altura real del header */
   left: auto;
   background: var(--bg);
   border: 1px solid var(--border);
-  min-width: 320px;
+  width: 360px;              /* ✅ ancho controlado */
+  max-width: calc(100vw - 80px);
   display: none;
   flex-direction: column;
-  z-index: 2000;                   /* por encima de todo */
+  z-index: 2000;
 }
 
+/* LINKS DEL MENÚ */
 .dropdown-menu a {
   padding: 10px 18px;
   font-size: 14px;
-  white-space: nowrap;
+  line-height: 1.4;
+  white-space: normal;       /* ✅ permite salto de línea */
+  word-break: normal;
 }
 
+/* HOVER */
 .dropdown-menu a:hover {
   background: #eef2f0;
 }
 
-/* activación */
+/* ACTIVACIÓN */
 .nav-dropdown:hover .dropdown-menu {
   display: flex;
 }
 
-/* CONTENT */
+/* CONTENIDO */
 .container {
   max-width: 1200px;
   margin: 0 auto;
