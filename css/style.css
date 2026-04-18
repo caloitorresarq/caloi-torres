@@ -1,3 +1,7 @@
+/* =========================
+   VARIABLES
+   ========================= */
+
 :root {
   --bg: #f7f7f5;
   --text: #1e1e1e;
@@ -6,7 +10,10 @@
   --accent: #4f6f63;
 }
 
-/* RESET */
+/* =========================
+   RESET
+   ========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -20,7 +27,10 @@ body {
   overflow-x: hidden;
 }
 
-/* LINKS */
+/* =========================
+   LINKS
+   ========================= */
+
 a {
   color: var(--text);
   text-decoration: none;
@@ -36,6 +46,7 @@ a:hover {
 
 .site-header {
   background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 
 .site-header-inner {
@@ -43,8 +54,8 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 32px 40px;
-  position: relative;
-  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .site-logo {
@@ -53,71 +64,22 @@ a:hover {
   font-weight: 500;
 }
 
-/* NAV */
-.site-nav {
-  display: flex;
-  gap: 28px;
-  font-size: 14px;
-}
-
 /* =========================
-   DROPDOWN PROYECTOS
+   NAV
    ========================= */
 
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown > span {
-  cursor: default;
-}
-
-/* MENÚ DESPLEGABLE */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  background: var(--bg);
-  border: 1px solid var(--border);
-
-  min-width: 320px;
-  max-width: 480px;
-
-  display: none;
-  flex-direction: column;
-  z-index: 20;
-}
-
-/* ÍTEMS DEL MENÚ */
-.dropdown-menu a {
-  display: block;
-  width: 100%;
-  padding: 10px 18px;
-
-  font-size: 14px;
-  line-height: 1.45;
-
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-.dropdown-menu a:hover {
-  background: #eef2f0;
-}
-
-/* ACTIVACIÓN HOVER */
-.nav-dropdown:hover .dropdown-menu {
+.site-nav {
   display: flex;
+  gap: 32px;
+  font-size: 14px;
 }
 
 /* =========================
-   CONTENIDO GENERAL
+   CONTAINER
    ========================= */
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 96px 40px;
 }
@@ -144,8 +106,9 @@ a:hover {
 }
 
 /* IMAGEN HOME */
+
 .home-image {
-  margin-top: 64px;
+  margin-top: 72px;
 }
 
 .home-image img {
@@ -155,16 +118,44 @@ a:hover {
 }
 
 /* =========================
+   GALERÍA
+   ========================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.gallery-grid a {
+  display: block;
+}
+
+.gallery-grid img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-grid img:hover {
+  opacity: 0.85;
+}
+
+/* =========================
    FOOTER
    ========================= */
 
 .footer {
   padding: 48px 40px;
+  border-top: 1px solid var(--border);
   font-size: 13px;
   color: var(--muted);
 }
 
 .footer-wide {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
