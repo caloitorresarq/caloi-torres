@@ -50,12 +50,13 @@ a:hover {
 }
 
 .site-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 40px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 40px;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .site-logo {
@@ -75,7 +76,7 @@ a:hover {
 }
 
 /* =========================
-   CONTAINER
+   MAIN CONTAINER
    ========================= */
 
 .container {
@@ -118,28 +119,31 @@ a:hover {
 }
 
 /* =========================
-   GALERÍA
+   GALERÍA — FULL WIDTH
    ========================= */
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 32px;
-  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  margin-top: 64px;
 }
 
 .gallery-grid a {
   display: block;
 }
 
+/* ✅ IMAGEN OCUPA TODO EL ANCHO */
+
 .gallery-grid img {
   width: 100%;
+  max-width: none;
   display: block;
   transition: opacity 0.25s ease;
 }
 
 .gallery-grid img:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* =========================
@@ -147,8 +151,8 @@ a:hover {
    ========================= */
 
 .footer {
-  padding: 48px 40px;
   border-top: 1px solid var(--border);
+  padding: 48px 40px;
   font-size: 13px;
   color: var(--muted);
 }
@@ -156,6 +160,7 @@ a:hover {
 .footer-wide {
   max-width: 1400px;
   margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
